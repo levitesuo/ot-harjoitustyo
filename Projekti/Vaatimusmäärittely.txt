@@ -1,0 +1,37 @@
+Valoon pohjautuva tasohyppely peli
+    Gimiikkana on että tasoja joille halutaan hypätä ei nää
+    Pelaajahahmo luo valoa ja myös mielenkiintoiset asiat kuten viholliset tai kerättävät objektit luovat ympärilleen valoa
+    muuten kaikki on mustaa
+
+    Lähinnä haluun tehä jotain siistiä idealla että useat valonlähteet vaikuttavat toisiinsa mielenkiintoisesti.
+    En tiiä tuleeko tästä peli ja jos tulee nii minkälainen peli.
+    Tein ohjan lopputyökseni vastaavan pienen prokkiksen. Lisään sen tähä repoon itteäni ja lukijaa varten. Jos kiinnostaa.
+
+Taso 1
+    Hahmo jolla voi hyppiä
+    On platformeja joille se voi hyppiä
+    valohommeli jotenki järkevästi luokalla ettei tarttee kirjoittaa kaikille omaa *
+    Yksi taso jonka ei tarvitse liikkua ylöspäin
+    Hahmolla on momentumia ja kitkaa ja painovoimaa
+        (Taso 1 saatu toimimaan ohjan loppupelissä poislukien *)
+
+Taso 2
+    Taso scrollaa ylöspäin
+    Alkukantainen UI 
+        Exit nappi
+        Pelaa nappi
+        Aloita alusta nappi
+    Jotain mielenkiintoisia valo objekteja
+        Lasia / puoliksi läpinäkyvä asioita
+            Ehkä jotain värillistä lasia
+    Valot sekoittuu keskenään keltainen + sininen = vihreä
+
+Taso 3
+    Tasolle checkpointteja
+    Mahollisesti UI elementti jossa voit valita miltä checkpointilta haluut alottaa
+    Vihollisia ?
+    
+Taso 4
+    Käyttäjiä ???
+        Muistaa millä tasolla olet niin että eri käyttäjät voivat tallentaa edistymisensä
+    
