@@ -32,17 +32,6 @@ files = [
 ]
 
 [[package]]
-name = "cowsay"
-version = "5.0"
-description = "The famous cowsay for GNU/Linux is now available for python"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "cowsay-5.0.tar.gz", hash = "sha256:c00e02444f5bc7332826686bd44d963caabbaba9a804a63153822edce62bbbf3"},
-]
-
-[[package]]
 name = "exceptiongroup"
 version = "1.1.1"
 description = "Backport of PEP 654 (exception groups)"
@@ -136,4 +125,4 @@ files = [
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.8"
-content-hash = "1050013d30463f2afe41c0b2f177e8acf07e69c03a469563a05fa5c48a958490"
+content-hash = "ade81d845a620ca0b1da84d27b435d9de755ac2148f134dd57d296fd776bad45"
