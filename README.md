@@ -6,3 +6,4 @@
 >[komentorivi.txt](https://github.com/levitesuo/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
 
+testi
