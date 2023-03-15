@@ -42,3 +42,6 @@ class Kassapaate:
             self.kassassa_rahaa += summa
         else:
             return
+
+    def __str__(self):
+        return f"{self.kassassa_rahaa}, {self.edulliset}, {self.maukkaat}"
