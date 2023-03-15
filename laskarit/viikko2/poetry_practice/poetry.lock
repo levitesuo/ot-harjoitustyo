@@ -1,0 +1,15 @@
+[[package]]
+name = "cowsay"
+version = "5.0"
+description = "The famous cowsay for GNU/Linux is now available for python"
+category = "main"
+optional = false
+python-versions = "*"
+
+[metadata]
+lock-version = "1.1"
+python-versions = "^3.8"
+content-hash = "c6dcdec3ebfe57bcb986fe45c5f16f0d1fee3acf981cf533b4291021a0a86340"
+
+[metadata.files]
+cowsay = []
