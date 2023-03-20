@@ -5,6 +5,7 @@ classDiagram
         #Välietapit: Array
         #Keräiltävät: Array
         #Vihulaiset: Array
+        #Pelaaja: Pelaaja
 
         #y_offsetti: int
 
