@@ -6,6 +6,8 @@ classDiagram
         #Keräiltävät: Array
         #Vihulaiset: Array
 
+        #y_offsetti: int
+
         +piirrä_asiat() void
         +piirrä_valot() void
     }
