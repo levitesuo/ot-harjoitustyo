@@ -1,6 +1,6 @@
 if __name__ == "__main__":
     import pygame
-    import level_objects as lo
+    import old_level_objects as lo
     import sys
     
     pygame.init()
