@@ -26,7 +26,7 @@ class player(character):
         self.__acc = np.array([0, 0])
         self.__vel = np.array([0, 0])
         #Player has position, velocity, acceleration and max_speed
-        self.__max_speed = 3
+        self.__max_speed = 30
         self._sprite = pygame.image.load("Projekti/src/sprites/player.png")
         
     def __str__(self):
