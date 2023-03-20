@@ -1,5 +1,18 @@
 ```Mermaid
 classDiagram
+    class game{
+        sizex: int
+        sizey: int
+        levels: Array
+    }
+    
+    class level{
+        platforms: Array
+        enemies: Array
+        Collectables: Array
+        checkpoints: Array
+
+    }
     class hahmo {
         #paikka: vector
         -nopeus: vector
