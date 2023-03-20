@@ -26,8 +26,8 @@ class player(character):
         self.__acc = np.array([0, 0])
         self.__vel = np.array([0, 0])
         #Player has position, velocity, acceleration and max_speed
-        self.__max_speed = 100
-        #self.__sprite = pygame.image.load(".\sprites\player.png")
+        self.__max_speed = 3
+        self._sprite = pygame.image.load("Projekti/src/sprites/player.png")
         
     def __str__(self):
         return f"[{int(self._pos[0])} {int(self._pos[1])}], [{int(self.__vel[0])} {int(self.__vel[1])}], [{int(self.__acc[0])} {int(self.__acc[1])}]"
@@ -40,9 +40,14 @@ class player(character):
         
     def updateAndShow(self):
         #xsize and ysize placeholders. To be substituted by the max x and y of the screen
-        xsize = 400
+        xsize = 800
         ysize = 400
-        
+        #Not sure how to implement gravity. Here is one way
+        #Friction also needs to be implemented. Maby in controll / collision dedection methods as those are dependent on if the player is on the ground or not. 
+        '''
+        gravity = 10
+        self.move((0, gravity))      
+        '''  
         #Adding acc to vel and setting acc to 0. bcs physics
         self.__vel += self.__acc
         self.__acc = np.array([0, 0])
@@ -58,6 +63,7 @@ class player(character):
             new_pos = self._pos + self.__vel
             
         self._pos = new_pos
+        
         
 if __name__ == "__main__":
     p = platform((1, 2), 3)
