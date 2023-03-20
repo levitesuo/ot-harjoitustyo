@@ -5,7 +5,7 @@ Valoon pohjautuva tasohyppely peli
 
     Lähinnä haluun tehä jotain siistiä idealla että useat valonlähteet vaikuttavat toisiinsa mielenkiintoisesti.
     En tiiä tuleeko tästä peli ja jos tulee nii minkälainen peli.
-    Tein ohjan lopputyökseni vastaavan pienen prokkiksen. Lisään sen tähä repoon itteäni ja lukijaa varten. Jos kiinnostaa.
+    Tein ohjan lopputyökseni vastaavan pienen prokkiksen. 
 
 Taso 1
     Hahmo jolla voi hyppiä
