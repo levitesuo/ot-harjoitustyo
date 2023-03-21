@@ -1,7 +1,7 @@
-from game_object import Game_object
+from .game_object import Game_object
 import pygame
 
-class sprited_object(Game_object):
+class Sprited_object(Game_object):
     def __init__(self, pos, sprite = None):
        super().__init__(pos) 
        self.__sprite_filelocation = sprite
@@ -14,4 +14,4 @@ class sprited_object(Game_object):
         else: return pygame.draw.rect(pygame.rect((50, 50)), (255, 0, 0), (0, 0, 50, 50))
         
     def __str__(self): 
-        return super().__str__ + " " + self.__sprite_filelocation
+        return super().__str__() + " " + str(self.__sprite_filelocation)
