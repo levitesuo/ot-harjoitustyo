@@ -21,11 +21,14 @@ classDiagram
 
 
     class Toiminnallinen {
+        #Valo: Valo
+        #Tekstuuri: Kuva
+    }
+
+    class Valo {
         #Offset: Vector
         #Voimakkuus: int
         #Väri: RGB Vector
-
-        #Tekstuuri: Kuva
     }
 
     class Lattia{
@@ -43,6 +46,11 @@ classDiagram
         Liiku() void
     }
 
+    class BoundingBöx {
+        Kulma: Vector
+
+        Osuuko(BoundingBöx) Suunnta
+    }
     class Pelaaja {
         -Velocity: Vector
         -Acceleration: Vector
@@ -53,16 +61,14 @@ classDiagram
     Pelaaja    <|-- Toiminnallinen
     Vihulainen <|-- Toiminnallinen
 
-
+    Objekti     --  BoundingBöx
     Lattia     <|-- Objekti
     Välietappi <|-- Toiminnallinen
     Keräiltävä <|-- Toiminnallinen
     
-    Toiminnallinen <-- Objekti
-    
-    Objekti <|-- Taso
-
-
+    Toiminnallinen <--  Objekti
+    Toiminnallinen --   Valo
+    Objekti        <|-- Taso
 
     Taso        <|-- Peli
     AloitusMenu <|-- Peli   
