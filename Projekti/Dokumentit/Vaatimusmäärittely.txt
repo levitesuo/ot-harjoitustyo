@@ -10,11 +10,11 @@ Valoon pohjautuva tasohyppely peli
 Taso 1
     Hahmo jolla voi hyppiä
     On platformeja joille se voi hyppiä
-    valohommeli jotenki järkevästi luokalla ettei tarttee kirjoittaa kaikille omaa *
     Yksi taso jonka ei tarvitse liikkua ylöspäin
     Hahmolla on momentumia ja kitkaa ja painovoimaa
         (Taso 1 saatu toimimaan ohjan loppupelissä poislukien *)
-
+        
+    valohommeli jotenki järkevästi luokalla ettei tarttee kirjoittaa kaikille omaa *
 Taso 2
     Taso scrollaa ylöspäin
     Alkukantainen UI 
