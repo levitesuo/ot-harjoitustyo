@@ -8,7 +8,3 @@ class Platform(Game_object):
         
     def __str__(self):
         return super().__str__ ()+ " " + str(self._width)
-    
-if __name__ == "__main__":
-    p = Platform((10, 10), 100)
-    print(p)
