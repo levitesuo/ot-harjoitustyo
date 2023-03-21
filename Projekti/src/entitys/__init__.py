@@ -1,1 +1,1 @@
-from game_object import game_object
+from game_object import Game_object
