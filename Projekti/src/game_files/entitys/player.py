@@ -24,6 +24,7 @@ class Player(Sprited_object):
             self.__vel = vector([self.__vel[0] / speed, self.__vel[1] / speed]) * self.__max_speed
 
         self._pos = vector([self._pos[0] + self.__vel[0], self._pos[1] + self.__vel[1]])
+        self._box.update(self._pos)
 
     def __str__(self):
         return super().__str__()+ " " + f"[{int(self.__vel[0])} {int(self.__vel[1])}] [{int(self.__acc[0])} {int(self.__acc[1])}] {int(self.__max_speed)}"
