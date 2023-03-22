@@ -27,4 +27,4 @@ class Player(Sprited_object):
 
     def __str__(self):
         return super().__str__()+ " " + f"[{int(self.__vel[0])} {int(self.__vel[1])}] [{int(self.__acc[0])} {int(self.__acc[1])}] {int(self.__max_speed)}"
-        player = Player((0, 0), "./src/entitys/sprites/player.png")
+        #player = Player((0, 0), "./src/game_files/entitys/sprites/sprite_not_found.png")

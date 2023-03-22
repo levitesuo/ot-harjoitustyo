@@ -11,7 +11,7 @@ class Sprited_object(Game_object):
     @property
     def sprite(self):
         if self.__sprite: return self.__sprite
-        else: return pygame.image.load("./src/entitys/sprites/sprite_not_found.png")
+        else: return pygame.image.load("./src/game_files/entitys/sprites/sprite_not_found.png")
         
     def __str__(self): 
         return super().__str__() + " " + str(self.__sprite_filelocation)

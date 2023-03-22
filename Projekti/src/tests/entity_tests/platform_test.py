@@ -1,5 +1,5 @@
 import unittest
-from entitys import Platform
+from game_files.entitys.platform import Platform
 
 class TestPlatform(unittest.TestCase):
     def setUp(self):
