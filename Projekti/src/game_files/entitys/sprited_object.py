@@ -8,7 +8,6 @@ class Sprited_object(Game_object):
         self.__sprite_filelocation = sprite
         self.__sprite = pygame.image.load(sprite)
         self._box = Bounding_Box(self._pos, (self.__sprite.get_width(), self.__sprite.get_height()))
-
        
     @property
     def sprite(self):
