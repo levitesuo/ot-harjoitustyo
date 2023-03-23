@@ -18,18 +18,17 @@ class Level_Platforms:
             if i != len(self.__platforms) - 1: s += "\n"
         return s
     
-    def check_for_collisions(self, other):
-        other_Box = other._box
+    def check_for_collisions(self, other_box):
         for plat in self.__platforms:
-            if other_Box.check_for_collision(plat._box): return True
+            if other_box.check_for_collision(plat._box): return True
         return False
 
     def draw(self, surface):
         for plat in self.__platforms:
-            rect = plat._box.get_corners()
-            plat_middle_height = rect[1] + (rect[3] - rect[1]) / 2
-            radius = (rect[3] - rect[1]) / 2
+            rect = plat._box.get_pos_and_offset()
+            plat_middle_height = rect[1] + rect[3] / 2
+            radius = rect[3] / 2
             color = (0, 0, 0)  
             pygame.draw.rect(surface, color, rect)
-            pygame.draw.circle(surface, color, (plat_middle_height, rect[0]), radius)
-            pygame.draw.circle(surface, color, (plat_middle_height, rect[2]), radius)
+            pygame.draw.circle(surface, color, (rect[0], plat_middle_height), radius)
+            pygame.draw.circle(surface, color, (rect[0] + rect[2], plat_middle_height), radius)

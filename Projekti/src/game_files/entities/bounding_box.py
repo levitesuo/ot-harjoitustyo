@@ -10,7 +10,10 @@ class Bounding_Box:
 
     def get_corners(self):
         return list(self.__pos) + list(self.__offset + self.__pos)
-    
+
+    def get_pos_and_offset(self):
+        return list(self.__pos) + list(self.__offset)
+
     def check_for_collision(self, other):
         minx1, miny1, maxx1, maxy1 = self.get_corners()
         minx2, miny2, maxx2, maxy2 = other.get_corners()
