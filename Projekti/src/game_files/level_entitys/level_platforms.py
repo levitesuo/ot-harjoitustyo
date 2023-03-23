@@ -1,4 +1,5 @@
 from ..entitys.platform import Platform
+import pygame
 
 class Level_Platforms:
     def __init__(self, list_of_platforms):
@@ -22,3 +23,13 @@ class Level_Platforms:
         for plat in self.__platforms:
             if other_Box.check_for_collision(plat._box): return True
         return False
+
+    def draw(self, surface):
+        for plat in self.__platforms:
+            rect = plat._box.get_corners()
+            plat_middle_height = rect[1] + (rect[3] - rect[1]) / 2
+            radius = (rect[3] - rect[1]) / 2
+            color = (0, 0, 0)
+            pygame.draw.rect(surface, color, rect)
+            pygame.draw.circle(surface, color, (plat_middle_height, rect[0]), radius)
+            pygame.draw.circle(surface, color, (plat_middle_height, rect[2]), radius)
