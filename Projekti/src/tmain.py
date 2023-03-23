@@ -20,11 +20,12 @@ while True:
     screen.fill((150, 150, 150))    
     screen.blit(meitti.sprite, (meitti._pos[0], meitti._pos[1]))
     keys = pygame.key.get_pressed()
+    meitti.apply_force((0, 10))
 
     if platforms.check_for_collisions(meitti._floor_box): 
-          print(meitti._floor_box)
+          #print(meitti._floor_box)
           meitti.on_the_floor()
-          if keys[pygame.K_UP]: meitti.apply_force((0, -10))
+          if keys[pygame.K_UP]: meitti.apply_force((0, -100))
     meitti.update()
     platforms.draw(screen)
     

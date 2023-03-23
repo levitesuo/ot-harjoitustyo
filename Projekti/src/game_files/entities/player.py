@@ -15,7 +15,7 @@ class Player(Sprited_object):
         self.__acc = vector([0, 0])
 
         self.__max_speed = 5
-        self._floor_box = Bounding_Box((self._pos[0], self.sprite.get_height() + self._pos[1]), (self.sprite.get_width(), 5))
+        self._floor_box = Bounding_Box((self._pos[0], self.sprite.get_height() + self._pos[1]), (self.sprite.get_width(), -5))
 
     def apply_force(self, force):
         force_vector = vector([force[0], force[1]])
@@ -23,7 +23,8 @@ class Player(Sprited_object):
 
     def on_the_floor(self):
         self.__acc[1] = 0
-        self.__vel  = vector([self.__vel[0] * 0.5, 0])
+        if self.__vel[1] >= 0:
+            self.__vel  = vector([self.__vel[0] * 0.5, 0])
 
     def update(self):
         self.__vel += self.__acc
@@ -40,4 +41,3 @@ class Player(Sprited_object):
 
     def __str__(self):
         return super().__str__()+ " " + f"[{int(self.__vel[0])} {int(self.__vel[1])}] [{int(self.__acc[0])} {int(self.__acc[1])}] {int(self.__max_speed)}"
-        #player = Player((0, 0), "./src/game_files/entitys/sprites/sprite_not_found.png")

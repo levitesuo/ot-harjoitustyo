@@ -9,4 +9,3 @@ class Game_object:
         
     def __str__(self):
         return f"[{int(self._pos[0])} {int(self._pos[1])}]"
-    
