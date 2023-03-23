@@ -1,5 +1,5 @@
 from .game_object import GameObject
-from .bounding_box import Bounding_Box
+from .bounding_box import BoundingBox
 
 
 class Platform(GameObject):
