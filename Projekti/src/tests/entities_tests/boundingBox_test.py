@@ -1,5 +1,5 @@
 import unittest
-from game_files.entitys.bounding_box import Bounding_Box
+from game_files.entities.bounding_box import Bounding_Box
 
 class TestBounding_Box(unittest.TestCase):
     def setUp(self):

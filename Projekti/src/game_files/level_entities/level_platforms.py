@@ -1,4 +1,4 @@
-from ..entitys.platform import Platform
+from ..entities.platform import Platform
 import pygame
 
 class Level_Platforms:

@@ -1,5 +1,5 @@
 import unittest
-from game_files.entitys.game_object import Game_object
+from game_files.entities.game_object import Game_object
 
 class TestGame_object(unittest.TestCase):
     def setUp(self):
