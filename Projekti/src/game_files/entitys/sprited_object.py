@@ -4,10 +4,10 @@ import pygame
 
 class Sprited_object(Game_object):
     def __init__(self, pos, sprite = "./src/game_files/entitys/sprites/sprite_not_found.png"):
-        super().__init__(pos) 
-        self.__sprite_filelocation = sprite
         self.__sprite = pygame.image.load(sprite)
-        self._box = Bounding_Box(self._pos, (self.__sprite.get_width(), self.__sprite.get_height()))
+        super().__init__(pos, (self.__sprite.get_width(), self.__sprite.get_height())) 
+        self.__sprite_filelocation = sprite
+        
        
     @property
     def sprite(self):

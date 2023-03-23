@@ -3,7 +3,7 @@ from numpy import array as vector
 import numpy as np
 
 class Player(Sprited_object):
-    def __init__(self, pos, sprite = None):
+    def __init__(self, pos, sprite = "./src/game_files/entitys/sprites/sprite_not_found.png"):
         super().__init__(pos, sprite)
         self.__vel = vector([0, 0])
         self.__acc = vector([0, 0])
