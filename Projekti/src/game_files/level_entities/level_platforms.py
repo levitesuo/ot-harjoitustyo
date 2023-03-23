@@ -29,7 +29,7 @@ class Level_Platforms:
             rect = plat._box.get_corners()
             plat_middle_height = rect[1] + (rect[3] - rect[1]) / 2
             radius = (rect[3] - rect[1]) / 2
-            color = (0, 0, 0)
+            color = (0, 0, 0)  
             pygame.draw.rect(surface, color, rect)
             pygame.draw.circle(surface, color, (plat_middle_height, rect[0]), radius)
             pygame.draw.circle(surface, color, (plat_middle_height, rect[2]), radius)
