@@ -1,11 +1,11 @@
-from .sprited_object import Sprited_object
-from .bounding_box import Bounding_Box
+from .sprited_object import SpritedObject
+from .bounding_box import BoundingBox
 from numpy import array as vector
 import numpy as np
 import os
 
 
-class Player(Sprited_object):
+class Player(SpritedObject):
     def __init__(self, pos, sprite=None):
         if not sprite:
             dirname = os.path.dirname(__file__)
@@ -15,7 +15,7 @@ class Player(Sprited_object):
         self.__acc = vector([0, 0])
 
         self.__max_speed = 5
-        self._floor_box = Bounding_Box(
+        self._floor_box = BoundingBox(
             (self._pos[0], self.sprite.get_height() + self._pos[1]),
             (self.sprite.get_width(), -5),
         )

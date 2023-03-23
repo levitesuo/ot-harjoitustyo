@@ -1,8 +1,8 @@
-from .game_object import Game_object
+from .game_object import GameObject
 from .bounding_box import Bounding_Box
 
 
-class Platform(Game_object):
+class Platform(GameObject):
     def __init__(self, pos, width):
         self._width = width
         self._height = 10

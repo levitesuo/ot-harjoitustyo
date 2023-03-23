@@ -1,8 +1,8 @@
 import unittest
-from game_files.entities.sprited_object import Sprited_object
+from game_files.entities.sprited_object import SpritedObject
 
 
-class TestSrited_boject(unittest.TestCase):
+class TestSritedObject(unittest.TestCase):
     def setUp(self):
         self.obj = Sprited_object(
             (100, 100), "./src/game_files/entities/sprites/player.png"

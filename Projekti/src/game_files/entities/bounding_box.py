@@ -1,7 +1,7 @@
 from numpy import array as vector
 
 
-class Bounding_Box:
+class BoundingBox:
     def __init__(self, pos, bottom_rigth_offset):
         self.__pos = vector([pos[0], pos[1]])
         self.__offset = vector([bottom_rigth_offset[0], bottom_rigth_offset[1]])

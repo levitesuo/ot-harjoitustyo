@@ -1,9 +1,9 @@
-from .game_object import Game_object
-from .bounding_box import Bounding_Box
+from .game_object import GameObject
+from .bounding_box import BoundingBox
 import pygame
 
 
-class Sprited_object(Game_object):
+class SpritedObject(GameObject):
     def __init__(
         self, pos, sprite="./src/game_files/entities/sprites/sprite_not_found.png"
     ):

@@ -2,7 +2,7 @@ from ..entities.platform import Platform
 import pygame
 
 
-class Level_Platforms:
+class LevelPlatforms:
     def __init__(self, list_of_platforms):
         # list_of_platforms contains a list of platforms
         # Where one platform is in the format ((x, y), width)

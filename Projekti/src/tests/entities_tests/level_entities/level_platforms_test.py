@@ -1,11 +1,11 @@
 import unittest
-from game_files.level_entities.level_platforms import Level_Platforms
+from game_files.level_entities.level_platforms import LevelPlatforms
 from game_files.entities.player import Player
 
 
-class TestLevel_Platforms(unittest.TestCase):
+class TestLevelPlatforms(unittest.TestCase):
     def setUp(self):
-        self.platforms = Level_Platforms([((10, 10), 30), ((20, 20), 40)])
+        self.platforms = LevelPlatforms([((10, 10), 30), ((20, 20), 40)])
 
     def test_platforms_created(self):
         self.assertEqual(
