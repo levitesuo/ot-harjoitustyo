@@ -6,7 +6,7 @@ import os
 
 
 class Player(Sprited_object):
-    def __init__(self, pos, sprite = None ):
+    def __init__(self, pos, sprite=None):
         if not sprite:
             dirname = os.path.dirname(__file__)
             sprite = os.path.join(dirname, "sprites/player.png")
@@ -15,7 +15,10 @@ class Player(Sprited_object):
         self.__acc = vector([0, 0])
 
         self.__max_speed = 5
-        self._floor_box = Bounding_Box((self._pos[0], self.sprite.get_height() + self._pos[1]), (self.sprite.get_width(), -5))
+        self._floor_box = Bounding_Box(
+            (self._pos[0], self.sprite.get_height() + self._pos[1]),
+            (self.sprite.get_width(), -5),
+        )
 
     def apply_force(self, force):
         force_vector = vector([force[0], force[1]])
@@ -24,20 +27,27 @@ class Player(Sprited_object):
     def on_the_floor(self):
         self.__acc[1] = 0
         if self.__vel[1] >= 0:
-            self.__vel  = vector([self.__vel[0] * 0.5, 0])
+            self.__vel = vector([self.__vel[0] * 0.5, 0])
 
     def update(self):
         self.__vel += self.__acc
         self.__acc = vector([0, 0])
 
-        #Speed scaling could use its own method
-        speed = np.linalg.norm(self.__vel) 
-        if speed > self.__max_speed: 
-            self.__vel = vector([self.__vel[0] / speed, self.__vel[1] / speed]) * self.__max_speed
+        # Speed scaling could use its own method
+        speed = np.linalg.norm(self.__vel)
+        if speed > self.__max_speed:
+            self.__vel = (
+                vector([self.__vel[0] / speed, self.__vel[1] / speed])
+                * self.__max_speed
+            )
 
         self._pos = vector([self._pos[0] + self.__vel[0], self._pos[1] + self.__vel[1]])
         self._box.update(self._pos)
         self._floor_box.update((self._pos[0], self.sprite.get_height() + self._pos[1]))
 
     def __str__(self):
-        return super().__str__()+ " " + f"[{int(self.__vel[0])} {int(self.__vel[1])}] [{int(self.__acc[0])} {int(self.__acc[1])}] {int(self.__max_speed)}"
+        return (
+            super().__str__()
+            + " "
+            + f"[{int(self.__vel[0])} {int(self.__vel[1])}] [{int(self.__acc[0])} {int(self.__acc[1])}] {int(self.__max_speed)}"
+        )
