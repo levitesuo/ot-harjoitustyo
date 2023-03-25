@@ -22,10 +22,13 @@ class LevelPlatforms:
         return s
 
     def check_for_collisions(self, other_box):
+        hights_collision = None
         for plat in self.__platforms:
             if other_box.check_for_collision(plat._box):
-                return True
-        return False
+                if hights_collision == None or hights_collision < plat._pos[1]:
+                    hights_collision = plat._pos[1]
+        if hights_collision: return hights_collision
+        else: return False
 
     def draw(self, surface):
         for plat in self.__platforms:

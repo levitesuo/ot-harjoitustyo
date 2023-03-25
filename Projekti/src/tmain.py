@@ -1,4 +1,4 @@
-from game_files.level_entities.level_platforms import Level_Platforms as LP
+from game_files.level_entities.level_platforms import LevelPlatforms as LP
 from game_files.entities.player import Player
 import pygame
 
