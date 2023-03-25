@@ -33,3 +33,7 @@ class TestPlayer(unittest.TestCase):
             str(self.player),
             "[13 44] ./src/game_files/entities/sprites/player.png [3 4] [0 0] 5",
         )
+
+    def test_falling_box_correct(self):
+        self.player.apply_force((0, 2))
+        self.assertEqual(str(self.player.falling_box()), "[10 80 42 78]")

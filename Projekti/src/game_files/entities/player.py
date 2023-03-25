@@ -24,6 +24,28 @@ class Player(SpritedObject):
         force_vector = vector([force[0], force[1]])
         self.__acc += force_vector
 
+    #Method that return floor BB from curr location to next location
+    #Method for setting vel y and pos y
+        #same method will do friction
+    
+    def falling_box(self):
+        self.__vel += self.__acc
+        self.__acc = vector([0, 0])
+
+        # Speed scaling could use its own method
+        speed = np.linalg.norm(self.__vel)
+        if speed > self.__max_speed:
+            self.__vel = (
+                vector([self.__vel[0] / speed, self.__vel[1] / speed])
+                * self.__max_speed
+            )
+        new_pos = vector([self._pos[0] + self.__vel[0], self._pos[1] + self.__vel[1]])
+        return BoundingBox((self._pos[0], self._pos[1] + self.sprite.get_height()), (self._pos[0] - new_pos[0] + self.sprite.get_width(), self._pos[1] - new_pos[1]))
+
+    def floor_hit(self, new_pos):
+        self.__vel[1] = 0
+        self._pos = new_pos
+
     def on_the_floor(self):
         self.__acc[1] = 0
         if self.__vel[1] >= 0:
