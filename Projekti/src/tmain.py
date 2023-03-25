@@ -23,8 +23,7 @@ while True:
     keys = pygame.key.get_pressed()
     meitti.apply_force((0, 10))
 
-    player_possible_hit_cordinte = platforms.check_for_collisions(meitti.falling_box())
-    if :
+if True:
         # print(meitti._floor_box)
         meitti.on_the_floor()
         if keys[pygame.K_UP]:
