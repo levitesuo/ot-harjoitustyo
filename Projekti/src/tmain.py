@@ -22,22 +22,26 @@ while True:
     screen.blit(meitti.sprite, (meitti._pos[0], meitti._pos[1]))
     keys = pygame.key.get_pressed()
     meitti.apply_force((0, 10))
-
-if True:
-        # print(meitti._floor_box)
-        meitti.on_the_floor()
+    player_new_pos = meitti.calc_new_pos()
+    collision = platforms.check_for_collisions(meitti.falling_box(player_new_pos))
+    print(collision)
+    if collision:
+        print("C")
         if keys[pygame.K_UP]:
-            meitti.apply_force((0, -100))
-    meitti.update()
+            meitti.apply_force((0, -10))
+        if keys[pygame.K_LEFT]:
+            meitti.apply_force((-5, 0))
+        if keys[pygame.K_RIGHT]:
+            meitti.apply_force((5, 0))
+        new_pos = (player_new_pos[0], collision)
+        meitti.floor_hit(new_pos)
+    else:
+        meitti.apply_force((0 ,10))
+        meitti.falling(player_new_pos)
+        
     platforms.draw(screen)
-
-    if keys[pygame.K_LEFT]:
-        meitti.apply_force((-5, 0))
-    if keys[pygame.K_RIGHT]:
-        meitti.apply_force((5, 0))
-
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit()
-    c.tick(30)
+    c.tick(10)
     pygame.display.update()
