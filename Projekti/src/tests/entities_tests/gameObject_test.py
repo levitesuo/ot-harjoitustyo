@@ -8,4 +8,3 @@ class TestGameObject(unittest.TestCase):
 
     def test_object_created(self):
         self.assertEqual(str(self.obj), "[100 100]")
-
