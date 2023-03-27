@@ -11,3 +11,5 @@
 ### Viikko 3
 >[UML simppeli monopoli](https://github.com/levitesuo/ot-harjoitustyo/blob/master/laskarit/viikko3/mermaid%20harjottelua/Tehtava_1.md)
 
+test
+
