@@ -1,4 +1,5 @@
 from ..entities.platform import Platform
+from numpy import array as vector
 import pygame
 
 
@@ -22,10 +23,10 @@ class LevelPlatforms:
         return s
 
     def check_for_collisions(self, other_box):
+        result = vector([0, 0])
         for plat in self.__platforms:
-            if other_box.check_for_collision(plat._box):
-                return True
-        return False
+            result += other_box.check_for_collision(plat._box)
+        return result
 
     def draw(self, surface):
         for plat in self.__platforms:

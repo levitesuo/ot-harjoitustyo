@@ -14,11 +14,12 @@ class TestBoundingBox(unittest.TestCase):
         self.assertEqual(str(self.box), "[0 0 100 100]")
 
     def test_box_collision_true(self):
-        other_box = BoundingBox((20, 0), (10, 400))
-        collision = self.box.check_for_collision(other_box)
-        self.assertEqual(str(collision), "True")
+        box1 = BoundingBox((0, 0), (2, 1))
+        box2 = BoundingBox((1, 0), (2, 1))
+        collision = box1.check_for_collision(box2)
+        self.assertEqual(str(collision), "[ 0 -1]")
 
     def test_box_collision_false(self):
         other_box = BoundingBox((2000, 10000), (10, 400))
         collision = self.box.check_for_collision(other_box)
-        self.assertEqual(str(collision), "False")
+        self.assertEqual(str(collision), "[0 0]")

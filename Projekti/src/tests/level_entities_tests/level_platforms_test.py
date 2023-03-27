@@ -15,9 +15,9 @@ class TestLevelPlatforms(unittest.TestCase):
     def test_platform_collision(self):
         player = Player((10, 10), "./src/game_files/entities/sprites/player.png")
         collision = self.platforms.check_for_collisions(player._box)
-        self.assertEqual(str(collision), "20")
+        self.assertEqual(str(collision), "[  0 -20]")
 
     def test_platform_collision_false(self):
         player = Player((100, 100), "./src/game_files/entities/sprites/player.png")
         collision = self.platforms.check_for_collisions(player._box)
-        self.assertEqual(str(collision), "False")
+        self.assertEqual(str(collision), "[0 0]")

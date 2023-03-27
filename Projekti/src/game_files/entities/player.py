@@ -25,11 +25,6 @@ class Player(SpritedObject):
         force_vector = vector([force[0], force[1]])
         self.__acc += force_vector
 
-    def apply_friction(self):
-        friction_amount = 0.5
-        self.__vel = vector(
-            [self.__vel[0] * friction_amount, self.__vel[1] * friction_amount]
-        )
 
     def get_falling_bounding_boxes(self):
         self.__vel += self.__acc
@@ -44,7 +39,7 @@ class Player(SpritedObject):
             )
             speed = np.linalg.norm(self.__vel)
 
-        falling_boxes = [copy.copy(self._box)]
+        falling_boxes = []
 
         normalised_speed_vector = self.__vel / speed
         iterative_speed_vector = normalised_speed_vector
@@ -53,15 +48,9 @@ class Player(SpritedObject):
             iterative_speed_vector = normalised_speed_vector * i
             i += 1
             pos = self._pos + iterative_speed_vector
-            self._floor_box.update((pos[0], pos[1] + self.sprite.get_height()))
+            self._box.update((pos[0], pos[1] + self.sprite.get_height()))
             falling_boxes.append(copy.copy(self._box))
         return falling_boxes
-
-    def move(self, pos, on_the_floor: bool):
-        if on_the_floor and self.__vel[1] > 0:
-            self.__vel[1] = 0
-        self._pos = pos
-        self._box.update(self._pos)
 
     def __str__(self):
         return (
