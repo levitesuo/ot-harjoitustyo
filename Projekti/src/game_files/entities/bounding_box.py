@@ -3,17 +3,17 @@ from numpy import array as vector
 
 class BoundingBox:
     def __init__(self, pos, bottom_rigth_offset):
-        self.__pos = vector([pos[0], pos[1]])
+        self._pos = vector([pos[0], pos[1]])
         self.__offset = vector([bottom_rigth_offset[0], bottom_rigth_offset[1]])
 
     def update(self, new_pos):
-        self.__pos = vector([new_pos[0], new_pos[1]])
+        self._pos = vector([new_pos[0], new_pos[1]])
 
     def get_corners(self):
-        return list(self.__pos) + list(self.__offset + self.__pos)
+        return list(self._pos) + list(self.__offset + self._pos)
 
     def get_pos_and_offset(self):
-        return list(self.__pos) + list(self.__offset)
+        return list(self._pos) + list(self.__offset)
 
     def check_for_collision(self, other):
         minx1, miny1, maxx1, maxy1 = self.get_corners()

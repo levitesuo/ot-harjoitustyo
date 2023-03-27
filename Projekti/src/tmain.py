@@ -1,4 +1,4 @@
-from game_files.level_entities.level_platforms import Level_Platforms as LP
+from game_files.level_entities.level_platforms import LevelPlatforms as LP
 from game_files.entities.player import Player
 import pygame
 
@@ -21,20 +21,25 @@ while True:
     screen.fill((150, 150, 150))
     screen.blit(meitti.sprite, (meitti._pos[0], meitti._pos[1]))
     keys = pygame.key.get_pressed()
-    meitti.apply_force((0, 10))
-
-    if platforms.check_for_collisions(meitti._floor_box):
-        # print(meitti._floor_box)
-        meitti.on_the_floor()
+    player_moving_boxes = meitti.get_falling_bounding_boxes()
+    int_the_air = True
+    for box in player_moving_boxes:
+        if platforms.check_for_collisions(box):
+            meitti.move((player_moving_boxes[-1]._pos[0],box._pos[1]), True)
+            int_the_air = False
+            break
+    if int_the_air: 
+        meitti.move(player_moving_boxes[-1]._pos, False)
+        meitti.apply_force((0, 3))
+    else:
+        meitti.apply_friction()
+        if keys[pygame.K_LEFT]:
+            meitti.apply_force((-5, 0))
+        if keys[pygame.K_RIGHT]:
+            meitti.apply_force((5, 0))
         if keys[pygame.K_UP]:
-            meitti.apply_force((0, -100))
-    meitti.update()
+            meitti.apply_force((0,-10))
     platforms.draw(screen)
-
-    if keys[pygame.K_LEFT]:
-        meitti.apply_force((-5, 0))
-    if keys[pygame.K_RIGHT]:
-        meitti.apply_force((5, 0))
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
