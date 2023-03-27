@@ -25,5 +25,9 @@ class TestPlayer(unittest.TestCase):
         s = ""
         for i in range(len(boxes)):
             s += str(boxes[i])
-            if i != len(boxes) - 1: s += "\n"
-        self.assertEqual(s, "[11.0 80.0 43.0 75.0]\n[12.0 80.0 44.0 75.0]\n[13.0 80.0 45.0 75.0]\n[14.0 80.0 46.0 75.0]\n[15.0 80.0 47.0 75.0]")
+            if i != len(boxes) - 1:
+                s += "\n"
+        self.assertEqual(
+            s,
+            "[11.0 80.0 43.0 75.0]\n[12.0 80.0 44.0 75.0]\n[13.0 80.0 45.0 75.0]\n[14.0 80.0 46.0 75.0]\n[15.0 80.0 47.0 75.0]",
+        )

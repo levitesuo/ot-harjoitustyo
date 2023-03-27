@@ -28,7 +28,7 @@ while True:
             meitti.move(player_moving_boxes[-1]._pos, True)
             int_the_air = False
             break
-    if int_the_air: 
+    if int_the_air:
         meitti.move(player_moving_boxes[-1]._pos, False)
         meitti.apply_force((0, 3))
     else:
@@ -38,7 +38,7 @@ while True:
         if keys[pygame.K_RIGHT]:
             meitti.apply_force((5, 0))
         if keys[pygame.K_UP]:
-            meitti.apply_force((0,-10))
+            meitti.apply_force((0, -10))
     platforms.draw(screen)
 
     for event in pygame.event.get():
