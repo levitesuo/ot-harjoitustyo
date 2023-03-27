@@ -25,7 +25,7 @@ while True:
     int_the_air = True
     for box in player_moving_boxes:
         if platforms.check_for_collisions(box):
-            meitti.move((player_moving_boxes[-1]._pos[0],box._pos[1]), True)
+            meitti.move(player_moving_boxes[-1]._pos, True)
             int_the_air = False
             break
     if int_the_air: 

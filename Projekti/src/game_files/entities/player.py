@@ -15,7 +15,7 @@ class Player(SpritedObject):
         self.__vel = vector([0, 0])
         self.__acc = vector([0, 0])
 
-        self.__max_speed = 5
+        self.__max_speed = 50
         self._floor_box = BoundingBox(
             (self._pos[0], self.sprite.get_height() + self._pos[1]),
             (self.sprite.get_width(), -5),
@@ -26,7 +26,8 @@ class Player(SpritedObject):
         self.__acc += force_vector
 
     def apply_friction(self):
-        self.__vel *= 0.5
+        friction_amount = 0.5
+        self.__vel = vector([self.__vel[0] * friction_amount, self.__vel[1] * friction_amount])
 
     def get_falling_bounding_boxes(self):
         self.__vel += self.__acc
@@ -55,7 +56,7 @@ class Player(SpritedObject):
         return falling_boxes
     
     def move(self, pos, on_the_floor: bool):
-        if on_the_floor:
+        if on_the_floor and self.__vel[1] > 0:
             self.__vel[1] = 0
         self._pos = pos
         self._box.update(self._pos)
