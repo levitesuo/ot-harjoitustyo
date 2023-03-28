@@ -1,5 +1,6 @@
 import unittest
 from game_files.entities.player import Player
+from game_files.entities.bounding_box import BoundingBox
 
 
 class TestPlayer(unittest.TestCase):

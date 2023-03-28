@@ -31,10 +31,7 @@ class Player(SpritedObject):
         # Speed scaling could use its own method
         speed = np.linalg.norm(vel)
         if speed > self.__max_speed:
-            self.vel = (
-                vector([vel[0] / speed, vel[1] / speed])
-                * self.__max_speed
-            )
+            vel = vector([vel[0] / speed, vel[1] / speed]) * self.__max_speed
             speed = np.linalg.norm(vel)
 
         falling_boxes = []
@@ -49,9 +46,27 @@ class Player(SpritedObject):
             self._box.update((pos[0], pos[1] + self.sprite.get_height()))
             falling_boxes.append(copy.copy(self._box))
         return falling_boxes
-    
+
     def collision_handler(self, collision):
-        self.__vel -= vector([self.__vel[0] * collision[0], self.__vel[1] * collision[1]] )
+        self.__vel = vector(
+            [
+                self.__vel[0] - self.__vel[0] * collision[0],
+                self.__vel[1] - self.__vel[1] * collision[1],
+            ]
+        )
+
+    def update(self):
+        self.__vel += self.__acc
+        self.__acc = vector([0, 0])
+        speed = np.linalg.norm(self.__vel)
+        if speed > self.__max_speed:
+            self.__vel = (
+                vector([self.__vel[0] / speed, self.__vel[1] / speed])
+                * self.__max_speed
+            )
+            speed = np.linalg.norm(self.__vel)
+
+        self._pos += self.__vel
 
     def __str__(self):
         return (

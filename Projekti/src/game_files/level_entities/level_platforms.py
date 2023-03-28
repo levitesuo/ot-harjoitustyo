@@ -23,10 +23,9 @@ class LevelPlatforms:
         return s
 
     def check_for_collisions(self, other_box):
-        result = vector([0, 0])
         for plat in self.__platforms:
-            result += other_box.check_for_collision(plat._box)
-        return result
+            return other_box.check_for_collision(plat._box)
+        return None
 
     def draw(self, surface):
         for plat in self.__platforms:
